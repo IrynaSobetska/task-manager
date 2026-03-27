@@ -1,0 +1,42 @@
+:root{
+  --white: #FFFFFF;
+  --black: #111720;
+  --grey: #737373;
+  --accent: #87b370;
+}
+
+html{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+  margin: 1em;
+  background: var(--white);
+  color: var(--black);
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 96vh;
+}
+
+.b-btn{
+  text-decoration: none;
+  border: solid var(--black) 0.15em;
+  color: var(--white);
+  background: var(--black);
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-top: 1em;
+}
+
+.b-btn:hover{
+  background: var(--white);
+  color: var(--black);
+  border: solid var(--black) 0.15em;
+}
