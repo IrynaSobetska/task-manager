@@ -1,0 +1,77 @@
+/* month */
+.calendar header{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.btn-cont{
+    display: flex;
+    gap: 1em;
+}
+
+#next, #prev{
+    border: solid var(--black) 0.1em;
+    border-radius: 0.25em;
+    height: 2em;
+    width: 2em;
+    font-size: large;
+}
+
+.days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    padding: 0;
+    margin-bottom: -0.1em;
+
+    border-right: 0.1em solid var(--black);
+    border-bottom: 0.1em solid var(--black);
+}
+
+.days li{
+    text-align: center;
+    padding: 0.5em;
+
+    border-top: 0.1em solid var(--black);
+    border-left: 0.1em solid var(--black);
+    
+    background-color: var(--white); 
+
+}
+
+.dates{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+
+    border-right: 0.1em solid var(--black);
+    border-bottom: 0.1em solid var(--black);
+
+}
+
+.date{
+    text-align: right;
+    padding: 0.5em;
+
+    border-top: 0.1em solid var(--black);
+    border-left: 0.1em solid var(--black);
+    background-color: var(--white);
+
+    font-size: small;
+}
+
+.date div{
+    height: 4em;
+}
+
+.g-day{
+    color: var(--grey);
+}
+
+.today{
+    background: var(--accent);
+}
+

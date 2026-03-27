@@ -1,0 +1,8 @@
+.home-container{
+    margin: 8% 2em 0 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
