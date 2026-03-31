@@ -1,61 +1,21 @@
 import React from "react";
 import "./Views.css";
 import { useState } from "react";
+import DayC from "./DayC";
+import constants from "../data/constants.json";
+import createMonthArr from "../utils/createMonthArr";
+import events from "../data/events.json";
 
 const Month = () => {
   let date = new Date();
-  const day = date.getDate();
 
   const [month, setMonth] = useState(date.getMonth());
   const [year, setYear] = useState(date.getFullYear());
+  const [isDay, setIsDay] = useState(null);
+  const [allEvents, setEvents] = useState(events);
 
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const start = new Date(year, month, 0).getDay();
-  const endDate = new Date(year, month + 1, 0).getDate();
-  const end = new Date(year, month, endDate).getDay();
-  const endDatePrev = new Date(year, month, 0).getDate();
-
-  let days = [];
-
-  for (let i = start; i > 0; i--) {
-    days.push(<li className="g-day">{endDatePrev - i + 1}</li>);
-  }
-
-  const currentMonth = date.getMonth();
-  const currentYear = date.getFullYear();
-
-  for (let i = 1; i <= endDate; i++) {
-    if (currentYear == year && currentMonth == month && i == day) {
-      days.push(<li className="today">{i}</li>);
-    } else {
-      days.push(<li>{i}</li>);
-    }
-  }
-
-  let currentVal = 0;
-
-  for (let i = end; i < 7; i++) {
-    days.push(<li className="g-day">{i - end + 1}</li>);
-    currentVal = i - end + 2;
-  }
-
-  while (days.length <= 7 * 6 - 1) {
-    days.push(<li className="g-day">{currentVal++}</li>);
-  }
+  const days = createMonthArr(year, month);
+  // console.log(days);
 
   return (
     <div>
@@ -90,7 +50,7 @@ const Month = () => {
             </button>
           </nav>
           <h3>
-            {months[month]} {year}
+            {constants.months[month]} {year}
           </h3>
         </header>
         <section>
@@ -105,13 +65,38 @@ const Month = () => {
           </ul>
           <ul className="dates">
             {days.map((item, index) => (
-              <div className="date" key={index}>
-                {item}
-                <div></div>
+              <div
+                className="date"
+                id={item[4]}
+                key={index}
+                onClick={() => setIsDay(item)}
+              >
+                <div className="date-cont">
+                  <li className={item[0]}>{item[1]}</li>
+                </div>
+                {allEvents.filter((ev) => ev.date == item[4]).length > 0 && (
+                  <div className="m-events">
+                    {allEvents
+                      .filter((ev) => ev.date == item[4])
+                      .map((ev) => (
+                        <div className="m-event" key={ev.id}>
+                          <p>{ev.title}</p>
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
             ))}
           </ul>
         </section>
+        {isDay ? (
+          <DayC
+            setEvents={setEvents}
+            events={allEvents}
+            day={isDay}
+            setIsDay={setIsDay}
+          />
+        ) : null}
       </div>
     </div>
   );

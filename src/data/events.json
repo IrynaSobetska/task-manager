@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Tech Conference",
+        "date": "2026-03-30",
+        "location": "San Francisco, CA",
+        "description": "A conference for tech enthusiasts to discuss the latest trends in technology."
+    },
+    {
+        "id": 2,
+        "title": "Music Festival",
+        "date": "2026-04-15",
+        "location": "Austin, TX",
+        "description": "An annual music festival featuring various artists and genres."
+    },
+    {
+        "id": 3,
+        "title": "Art Exhibition",
+        "date": "2026-04-18",
+        "location": "New York, NY",
+        "description": "An exhibition showcasing contemporary art from around the world."
+    }
+]
