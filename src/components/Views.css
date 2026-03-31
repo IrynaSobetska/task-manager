@@ -1,4 +1,7 @@
 /* month */
+.calendar{
+    position: relative;
+}
 .calendar header{
     display: flex;
     align-items: center;
@@ -61,10 +64,23 @@
     background-color: var(--white);
 
     font-size: small;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 6em;
+    overflow: hidden;
 }
 
-.date div{
-    height: 4em;
+.date-cont{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.date li{
+    padding: 0.25em 0.5em;
+    width: 1em;
+
 }
 
 .g-day{
@@ -73,5 +89,14 @@
 
 .today{
     background: var(--accent);
+    border-radius: 0.25em;
 }
 
+.m-event p{
+    text-align: left;
+    margin: 0.5em 0 0 0;
+    background: var(--accent);
+    border-radius: 0.25em;
+    padding: 0.25em;
+    /* width: 100%; */
+}

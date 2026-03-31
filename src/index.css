@@ -40,3 +40,19 @@ body{
   color: var(--black);
   border: solid var(--black) 0.15em;
 }
+
+.w-btn{
+  text-decoration: none;
+  border: solid var(--black) 0.15em;
+  color: var(--black);
+  background: var(--white);
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-top: 1em;
+}
+
+.w-btn:hover{
+  background: var(--black);
+  color: var(--white);
+  border: solid var(--black) 0.15em;
+}
