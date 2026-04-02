@@ -9,6 +9,7 @@ const DayC = ({ day, setIsDay, setEvents, events }) => {
   const [date, setDate] = useState(day[4]);
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
+  const [isMore, setMore] = useState(false);
 
   let todayEvents = events.filter((event) => event.date == day[4]);
 
@@ -55,6 +56,11 @@ const DayC = ({ day, setIsDay, setEvents, events }) => {
     );
 
     setUpdateForm(false);
+  };
+
+  const handleDeleteEvent = (id) => {
+    setMore(false);
+    setEvents((prevEvents) => prevEvents.filter((event) => event.id !== id));
   };
 
   return (
@@ -130,9 +136,26 @@ const DayC = ({ day, setIsDay, setEvents, events }) => {
                     onSubmit={(e) => handleUpdate(e, event)}
                     className="d-form"
                   >
-                    <p className="s-close" onClick={() => setUpdateForm(false)}>
-                      X
-                    </p>
+                    <div className="s-close">
+                      <img
+                        className="more-btn"
+                        src="/dots.svg"
+                        alt=""
+                        onClick={() => setMore(!isMore)}
+                      />
+                      {isMore && (
+                        <div className="opts">
+                          <p
+                            className="more-btn"
+                            onClick={() => handleDeleteEvent(event.id)}
+                          >
+                            Delete
+                          </p>
+                        </div>
+                      )}
+                      <p onClick={() => setUpdateForm(false)}>X</p>
+                    </div>
+
                     <input
                       name="title"
                       type="text"

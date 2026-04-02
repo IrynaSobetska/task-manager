@@ -1,5 +1,5 @@
-:root{
-  --white: #FFFFFF;
+:root {
+  --white: #ffffff;
   /* --white: #111720; */
   --black: #111720;
   /* --black: #FFFFFF; */
@@ -7,29 +7,29 @@
   --accent: #87b370;
 }
 
-html{
+html {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
 
-body{
+body {
   margin: 1em;
   background: var(--white);
   color: var(--black);
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 96vh;
 }
 
-.b-btn{
+.b-btn {
   text-decoration: none;
-  border: solid var(--black) 0.15em;
+  border: solid var(--black) 0.1em;
   color: var(--white);
   background: var(--black);
   padding: 1em;
@@ -37,15 +37,15 @@ body{
   margin-top: 1em;
 }
 
-.b-btn:hover{
+.b-btn:hover {
   background: var(--white);
   color: var(--black);
-  border: solid var(--black) 0.15em;
+  border: solid var(--black) 0.1em;
 }
 
-.w-btn{
+.w-btn {
   text-decoration: none;
-  border: solid var(--black) 0.15em;
+  border: solid var(--black) 0.1em;
   color: var(--black);
   background: var(--white);
   padding: 1em;
@@ -53,8 +53,8 @@ body{
   margin-top: 1em;
 }
 
-.w-btn:hover{
+.w-btn:hover {
   background: var(--black);
   color: var(--white);
-  border: solid var(--black) 0.15em;
+  border: solid var(--black) 0.1em;
 }
