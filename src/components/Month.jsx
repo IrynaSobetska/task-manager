@@ -13,9 +13,32 @@ const Month = () => {
   const [year, setYear] = useState(date.getFullYear());
   const [isDay, setIsDay] = useState(null);
   const [allEvents, setEvents] = useState(events);
+  const [isDragging, setIsDragging] = useState(false);
 
   const days = createMonthArr(year, month);
-  // console.log(days);
+
+  const moveEventToDate = (id, targetDate) => {
+    setEvents((prev) =>
+      prev.map((ev) =>
+        ev.id === Number(id) ? { ...ev, date: targetDate } : ev,
+      ),
+    );
+  };
+
+  const onDragStart = (e, eventId) => {
+    e.stopPropagation();
+    e.dataTransfer.setData("eventId", eventId);
+  };
+
+  const onTouchEnd = (e, event) => {
+    const touch = e.changedTouches[0];
+    const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+    const dateCell = dropTarget?.closest(".date");
+
+    if (dateCell) {
+      moveEventToDate(event.id, dateCell.id);
+    }
+  };
 
   return (
     <div>
@@ -70,6 +93,11 @@ const Month = () => {
                 id={item[4]}
                 key={index}
                 onClick={() => setIsDay(item)}
+                onDragOver={(e) => e.preventDefault()}
+                onDrop={(e) => {
+                  const id = e.dataTransfer.getData("eventId");
+                  moveEventToDate(id, item[4]);
+                }}
               >
                 <div className="date-cont">
                   <li className={item[0]}>{item[1]}</li>
@@ -79,7 +107,18 @@ const Month = () => {
                     {allEvents
                       .filter((ev) => ev.date == item[4])
                       .map((ev) => (
-                        <div className="m-event" key={ev.id}>
+                        <div
+                          className={`m-event ${isDragging ? "dragging" : ""}`}
+                          key={ev.id}
+                          draggable="true"
+                          onDragStart={(e) => onDragStart(e, ev.id)}
+                          onTouchStart={() => setIsDragging(true)}
+                          onTouchEnd={(e) => {
+                            setIsDragging(false);
+                            onTouchEnd(e, ev);
+                          }}
+                          style={{ touchAction: "none" }}
+                        >
                           <p>{ev.title}</p>
                         </div>
                       ))}
