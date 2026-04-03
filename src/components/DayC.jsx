@@ -32,8 +32,14 @@ const DayC = ({ day, setIsDay, setEvents, events }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    let id = 0;
+
+    if (events.length > 0) {
+      id = events[events.length - 1].id + 1;
+    }
+
     const newEvent = {
-      id: events[events.length - 1].id + 1,
+      id: id,
       title,
       date,
       location,
