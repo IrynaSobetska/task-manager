@@ -1,43 +1,43 @@
-.profile-container{
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    align-self: center;
+.profile-cont {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-self: center;
 }
 
-.form-container{
-    display: flex;
-    flex-direction: column;
+.form-cont {
+  display: flex;
+  flex-direction: column;
 }
-.p-form{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1em;
-    gap: 0.5em;
-}
-
-.p-form input{
-    padding: 0.3em 0.7em;
+.p-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  gap: 0.5em;
 }
 
-.inp-cont{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+.p-form input {
+  padding: 0.3em 0.7em;
 }
 
-.change-form{
-    border: none;
-    text-align: center;
+.inp-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
-.change-form:hover{
-    text-decoration: underline;
-    cursor: pointer;
+.change-form {
+  border: none;
+  text-align: center;
 }
 
-.profile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.change-form:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
