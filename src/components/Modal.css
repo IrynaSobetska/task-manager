@@ -1,0 +1,129 @@
+.overlay {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2b2b2ba9;
+}
+
+.modal-cont {
+  position: relative;
+  margin-top: 15em;
+  max-height: 40%;
+  min-height: 10%;
+  width: 75%;
+  background: var(--white);
+  /* border: solid var(--black) 0.1em; */
+  border-radius: 0.5em;
+  padding: 1em;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-color: var(--grey) var(--white);
+}
+
+.close {
+  position: absolute;
+  font-size: larger;
+  right: 1em;
+  margin: 0;
+  cursor: pointer;
+}
+
+.e-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.5em 0;
+  position: relative;
+}
+
+.create-form {
+  margin: 2em 0 0 0;
+}
+
+.e-form input {
+  padding: 0.7em 1em;
+  border-radius: 0.5em;
+  border: solid var(--light-grey) 0.2em;
+}
+
+.e-form input:focus {
+  border: solid var(--accent) 0.2em;
+  outline: none;
+}
+
+.e-form textarea {
+  padding: 0.7em 1em;
+  border-radius: 0.5em;
+  border: solid var(--light-grey) 0.2em;
+  resize: vertical;
+  min-height: 2em;
+}
+
+.e-form textarea:focus {
+  border: solid var(--accent) 0.2em;
+  outline: none;
+}
+
+.r-btn-cont {
+  display: flex;
+  justify-content: end;
+  margin-top: -1em;
+  margin-bottom: 1em;
+}
+
+.btn-cont {
+  display: flex;
+  justify-content: end;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.modal-events {
+  display: grid;
+  gap: 1em;
+}
+
+.modal-ev {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1em;
+}
+
+.modal-ev h3 {
+  font-size: large;
+  margin: 0.25em 0;
+}
+
+.modal-ev p {
+  margin: 0.25em 0;
+  color: var(--grey);
+}
+
+.ev-change {
+  display: flex;
+  gap: 0.5em;
+}
+
+.ev-change button {
+  border: none;
+  margin: 0;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.ev-change button:hover {
+  background: var(--light-accent);
+}
+
+.ev-change img {
+  height: 1.5em;
+}
