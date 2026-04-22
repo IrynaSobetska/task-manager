@@ -3,8 +3,10 @@
   /* --white: #111720; */
   --black: #111720;
   /* --black: #FFFFFF; */
-  --grey: #737373;
-  --accent: #87b370;
+  --light-grey: #d1d1d1;
+  --grey: #868686;
+  --accent: #70b99b;
+  --light-accent: #91ceb4;
 }
 
 html {
@@ -15,32 +17,29 @@ html {
 }
 
 body {
-  margin: 1em;
+  margin: 1em 1em 0 1em;
   background: var(--white);
   color: var(--black);
 }
 
-.container {
+.cont {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 96vh;
+  height: 98vh;
 }
 
-.b-btn {
+.a-btn {
   text-decoration: none;
-  border: solid var(--black) 0.1em;
-  color: var(--white);
-  background: var(--black);
+  border: none;
+  color: var(--black);
+  background: var(--accent);
   padding: 1em;
   border-radius: 0.5em;
-  margin-top: 1em;
 }
 
-.b-btn:hover {
-  background: var(--white);
-  color: var(--black);
-  border: solid var(--black) 0.1em;
+.a-btn:hover {
+  background: var(--light-accent);
 }
 
 .w-btn {
@@ -57,4 +56,16 @@ body {
   background: var(--black);
   color: var(--white);
   border: solid var(--black) 0.1em;
+}
+
+@media (max-width: 400px) {
+  h3 {
+    font-size: small;
+  }
+  button {
+    font-size: small;
+  }
+  li {
+    font-size: small;
+  }
 }
