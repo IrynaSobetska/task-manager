@@ -3,7 +3,6 @@ import { useState } from "react";
 import constants from "../data/constants.json";
 
 const Modal = ({ type, setIsModal, events, setEvents, day }) => {
-  // fix: responsive design
   const [tempType, setTempType] = useState("update");
   const [updateForm, setUpdateForm] = useState(false);
   const [createForm, setCreateForm] = useState(false);
@@ -84,7 +83,6 @@ const Modal = ({ type, setIsModal, events, setEvents, day }) => {
       setIsModal(false);
     }
 
-    // Clear the form so it's fresh for next time
     setFormData({ title: "", date: "", loc: "", description: "" });
   };
 
@@ -189,8 +187,6 @@ const Modal = ({ type, setIsModal, events, setEvents, day }) => {
                   <button
                     className="a-btn"
                     onClick={() => {
-                      // setIsDay(true);
-                      // setModalType("create");
                       setTempType("create");
                       setUpdateForm(false);
                       setFormData({
