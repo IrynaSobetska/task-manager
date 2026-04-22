@@ -1,5 +1,5 @@
-{   
-    "months" : [
+{
+  "months": [
     "January",
     "February",
     "March",
@@ -12,4 +12,48 @@
     "October",
     "November",
     "December"
-]}
+  ],
+
+  "days": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ],
+
+  "forms": {
+    "create": [
+      {
+        "tag": "input",
+        "name": "title",
+        "type": "text",
+        "required": true,
+        "placeholder": "Title"
+      },
+      {
+        "tag": "input",
+        "name": "date",
+        "type": "date",
+        "required": true
+      },
+
+      {
+        "tag": "input",
+        "name": "loc",
+        "type": "text",
+        "required": false,
+        "placeholder": "Location (optional)"
+      },
+      {
+        "tag": "textarea",
+        "name": "description",
+        "type": "text",
+        "required": false,
+        "placeholder": "Description (optional)"
+      }
+    ]
+  }
+}
