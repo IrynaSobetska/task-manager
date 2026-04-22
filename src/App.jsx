@@ -7,7 +7,7 @@ import Footer from "./components/Footer.jsx";
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="cont">
       <Header />
       <Routes>
         <Route index element={<Home />} />
